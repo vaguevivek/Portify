@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const PortifyLogo: React.FC = () => (
@@ -29,24 +28,11 @@ const Header: React.FC = () => {
         }
 
         const sectionId = item.toLowerCase();
+        const element = document.getElementById(sectionId);
 
-        if (item === 'FAQs') {
-            window.location.href = 'faq.html';
-            return;
-        }
-
-        const isHomePage = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
-        
-        if (isHomePage) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                // Update URL hash for better UX without full reload
-                window.history.pushState(null, '', `#${sectionId}`);
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        } else {
-            // Navigate to the homepage; hash will be handled by App.tsx's useEffect for smooth scroll
-            window.location.href = `index.html#${sectionId}`;
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            window.history.pushState(null, '', `#${sectionId}`);
         }
     };
     

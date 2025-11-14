@@ -1,27 +1,14 @@
-
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import LaptopShowcase from './components/LaptopShowcase';
 import Features from './components/Features';
 import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
+import Faq from './components/Faq';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
-  useEffect(() => {
-    // On page load, check if there's a hash in the URL for smooth scrolling
-    if (window.location.hash) {
-      const id = window.location.hash.substring(1); // Remove '#'
-      const element = document.getElementById(id);
-      if (element) {
-        // Use a small timeout to ensure the element is rendered before scrolling
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
-    }
-  }, []);
-
   return (
     <div className="bg-white text-gray-800">
       <div className="relative overflow-x-hidden">
@@ -37,6 +24,8 @@ const App: React.FC = () => {
       <Features />
       <Testimonials />
       <Pricing />
+      <Faq />
+      <Footer />
     </div>
   );
 };
