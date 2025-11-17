@@ -34,7 +34,7 @@ const LaptopShowcase: React.FC = () => {
     return (
         <div className="mt-16 md:mt-24 w-full flex justify-center px-4 pb-16 z-10">
             <div className="w-full max-w-5xl">
-                <div className="relative mx-auto border-gray-300 bg-gray-100 dark:border-gray-800 border-[2px] md:border-[4px] rounded-t-2xl shadow-2xl shadow-purple-200/50 aspect-[16/10]">
+                <div className="relative mx-auto border-gray-300 bg-gray-100 dark:border-gray-800 border-[2px] md:border-[4px] rounded-t-2xl shadow-2xl shadow-indigo-500/40 aspect-[16/10]">
                     <div className="rounded-md overflow-hidden w-full h-full bg-white">
                         <MiniWebsite />
                     </div>

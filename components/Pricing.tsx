@@ -7,6 +7,7 @@ const plans = [
         period: "/month",
         description: "For individuals and hobbyists starting out.",
         features: [
+            "1 Website",
             "1 Project",
             "Basic Templates",
             "Portify Subdomain",
@@ -17,15 +18,17 @@ const plans = [
     },
     {
         name: "Pro",
-        price: "$12",
+        price: "$25",
         period: "/month",
         description: "For professionals and freelancers who want to stand out.",
         features: [
-            "Unlimited Projects",
+            "1 Website",
+            "5 Projects",
             "Premium Templates",
             "Custom Domain",
             "Analytics",
-            "Priority Support"
+            "Priority Support",
+            "Add more projects for $5/each"
         ],
         buttonText: "Choose Plan",
         isPopular: true
@@ -67,7 +70,7 @@ const Pricing: React.FC = () => {
 
                 <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {plans.map((plan, index) => (
-                        <div key={index} className={`rounded-2xl p-8 shadow-lg transition-transform duration-300 transform hover:-translate-y-2 ${plan.isPopular ? 'bg-indigo-600 text-white border-2 border-indigo-700' : 'bg-white text-gray-800 border'}`}>
+                        <div key={index} className={`rounded-2xl p-8 shadow-lg transition-transform duration-300 transform hover:-translate-y-2 flex flex-col ${plan.isPopular ? 'bg-indigo-600 text-white border-2 border-indigo-700' : 'bg-white text-gray-800 border'}`}>
                             {plan.isPopular && (
                                 <div className="absolute top-0 right-8 -mt-4">
                                     <span className="bg-white text-indigo-600 text-xs font-bold px-4 py-1 rounded-full shadow-md">MOST POPULAR</span>
@@ -79,7 +82,7 @@ const Pricing: React.FC = () => {
                                 <span className={`text-4xl font-bold ${plan.isPopular ? 'text-white' : 'text-gray-900'}`}>{plan.price}</span>
                                 <span className={`ml-1 ${plan.isPopular ? 'text-indigo-200' : 'text-gray-500'}`}>{plan.period}</span>
                             </div>
-                            <ul className="mt-8 space-y-4">
+                            <ul className="mt-8 space-y-4 flex-grow">
                                 {plan.features.map((feature, fIndex) => (
                                     <li key={fIndex} className="flex items-center">
                                         <div className={`flex-shrink-0 ${plan.isPopular ? '' : 'text-indigo-500'}`}>
