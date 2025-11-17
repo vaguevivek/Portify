@@ -58,7 +58,7 @@ const CheckIcon: React.FC = () => (
 const Pricing: React.FC = () => {
     return (
         <section id="pricing" className="bg-white py-20 sm:py-24">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-9">
                 <div className="text-center max-w-3xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
                         Choose Your Plan

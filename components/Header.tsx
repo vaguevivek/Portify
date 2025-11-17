@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const PortifyLogo: React.FC = () => (
     <a href="index.html" className="flex items-center gap-2 cursor-pointer">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 3H4C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4C21 3.44772 20.5523 3 20 3Z" stroke="#1F2937" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M8 12L11 15L16 10" stroke="#1F2937" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M6 3H18C19.65 3 21 4.35 21 6V18C21 19.65 19.65 21 18 21H6C4.35 21 3 19.65 3 18V6C3 4.35 4.35 3 6 3Z" stroke="#1F2937" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M16 8L8 16" stroke="#1F2937" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
         <span className="font-bold text-2xl text-gray-800 tracking-tight">Portify</span>
     </a>
@@ -38,7 +38,7 @@ const Header: React.FC = () => {
     
     return (
         <header className="w-full z-50">
-            <div className="container mx-auto px-6 py-6 flex justify-between items-center">
+            <div className="container mx-auto px-9 py-6 flex justify-between items-center">
                 <PortifyLogo />
                 <nav className="hidden md:flex items-center space-x-8">
                     {navItems.map(item => (
@@ -62,7 +62,7 @@ const Header: React.FC = () => {
                 </div>
             </div>
             {isMenuOpen && (
-                <div className="md:hidden bg-white px-6 pb-6 shadow-lg rounded-b-lg">
+                <div className="md:hidden bg-white px-9 pb-6 shadow-lg rounded-b-lg">
                     <nav className="flex flex-col items-center space-y-4 pt-4">
                         {navItems.map(item => (
                             <a 
