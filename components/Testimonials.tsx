@@ -1,90 +1,40 @@
-import React, { useState, useEffect } from 'react';
 
-const testimonials = [
-    {
-        quote: "Portify made it incredibly simple to launch a professional portfolio. I had my site up and running in under an hour without writing a single line of code. Highly recommended!",
-        name: "Sarah Johnson",
-        title: "Freelance Designer",
-        avatar: "https://randomuser.me/api/portraits/women/44.jpg"
-    },
-    {
-        quote: "The templates are modern and beautiful. It gave my work the showcase it deserved. The best part is how easy it is to update my projects on the fly.",
-        name: "Michael Chen",
-        title: "Photographer",
-        avatar: "https://randomuser.me/api/portraits/men/32.jpg"
-    },
-    {
-        quote: "As a developer, I appreciate a well-built product. Portify is intuitive, fast, and the end result looks fantastic. It's the perfect no-code solution for professionals.",
-        name: "David Lee",
-        title: "Software Engineer",
-        avatar: "https://randomuser.me/api/portraits/men/46.jpg"
-    },
-    {
-        quote: "I'm not tech-savvy at all, but Portify's editor was a breeze to use. I finally have a portfolio that I'm proud to share with potential clients.",
-        name: "Emily Rodriguez",
-        title: "Content Writer",
-        avatar: "https://randomuser.me/api/portraits/women/68.jpg"
-    }
-];
+import React from 'react';
 
 const Testimonials: React.FC = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentIndex(prevIndex => (prevIndex + 1) % testimonials.length);
-        }, 5000); // Change slide every 5 seconds
-        return () => clearInterval(timer);
-    }, []);
-
-    const goToSlide = (index: number) => {
-        setCurrentIndex(index);
-    };
-
     return (
-        <section id="testimonials" className="bg-gray-50 py-20 sm:py-24">
+        <section id="testimonials" className="bg-gray-50 py-20 sm:py-24 border-t border-gray-100/50">
             <div className="container mx-auto px-9">
-                <div className="text-center max-w-3xl mx-auto">
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
-                        Loved by Professionals Worldwide
+                <div className="max-w-3xl mx-auto text-center bg-white rounded-3xl p-8 sm:p-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 relative overflow-hidden">
+                    
+                    {/* Subtle Gradient Accent at top */}
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-80"></div>
+                    
+                    {/* Icon */}
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-50 rounded-2xl mb-8 text-indigo-600 rotate-3 hover:rotate-6 transition-transform duration-300">
+                         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                    </div>
+
+                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight mb-6">
+                        Be The First Success Story
                     </h2>
-                    <p className="mt-4 text-lg text-gray-600">
-                        Don't just take our word for it. See what our users are saying about their experience with Portify.
+                    
+                    <p className="text-lg text-gray-600 mb-10 leading-relaxed max-w-xl mx-auto">
+                        We've just launched Portify to help professionals like you build their digital identity. 
+                        Join our pilot program today, and you could be the first to be featured in our community spotlight.
                     </p>
-                </div>
-
-                <div className="mt-16 relative">
-                    <div className="overflow-hidden relative h-64">
-                        {testimonials.map((testimonial, index) => (
-                            <div
-                                key={index}
-                                className="absolute w-full transition-opacity duration-1000 ease-in-out"
-                                style={{ opacity: index === currentIndex ? 1 : 0 }}
-                            >
-                                <div className="max-w-3xl mx-auto text-center">
-                                    <img src={testimonial.avatar} alt={testimonial.name} className="w-20 h-20 mx-auto rounded-full shadow-lg" />
-                                    <blockquote className="mt-8 text-xl text-gray-700 italic">
-                                        “{testimonial.quote}”
-                                    </blockquote>
-                                    <div className="mt-6">
-                                        <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                                        <p className="text-gray-500">{testimonial.title}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+                    
+                    {/* Badge */}
+                    <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-indigo-50 text-indigo-700 rounded-full text-sm font-semibold tracking-wide border border-indigo-100">
+                        <span className="relative flex h-2.5 w-2.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-600"></span>
+                        </span>
+                        Accepting Early Adopters
                     </div>
 
-                    <div className="flex justify-center space-x-3 mt-8">
-                        {testimonials.map((_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => goToSlide(index)}
-                                className={`w-3 h-3 rounded-full transition-colors duration-300 ${currentIndex === index ? 'bg-indigo-600' : 'bg-gray-300 hover:bg-gray-400'}`}
-                                aria-label={`Go to slide ${index + 1}`}
-                            />
-                        ))}
-                    </div>
                 </div>
             </div>
         </section>
