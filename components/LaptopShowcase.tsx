@@ -76,10 +76,10 @@ const LaptopShowcase: React.FC = () => {
         <div className="mt-16 md:mt-20 w-full flex justify-center px-6 sm:px-10 pb-20 z-10">
             <div className="relative w-full max-w-6xl group perspective-1000 cursor-default">
                 {/* Soft Glow Underneath */}
-                <div className="absolute -inset-4 top-10 bg-gradient-to-t from-indigo-200 via-purple-100 to-transparent rounded-[3rem] blur-3xl opacity-60 -z-10 transition-opacity duration-700 group-hover:opacity-80"></div>
+                <div className="absolute -inset-4 top-10 bg-gradient-to-t from-indigo-200 via-purple-100 to-transparent dark:from-indigo-900/50 dark:via-purple-900/30 rounded-[3rem] blur-3xl opacity-60 -z-10 transition-opacity duration-700 group-hover:opacity-80"></div>
                 
-                {/* Main Floating Frame - Retains container hover lift but no internal interaction */}
-                <div className="relative bg-white rounded-[2rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] ring-1 ring-gray-900/5 overflow-hidden aspect-[16/12] md:aspect-[16/10] transform transition-all duration-700 hover:shadow-[0_30px_60px_-12px_rgba(0,0,0,0.15)] hover:-translate-y-1">
+                {/* Main Floating Frame */}
+                <div className="relative bg-white dark:bg-gray-800 rounded-[2rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] ring-1 ring-gray-900/5 dark:ring-gray-100/10 overflow-hidden aspect-[16/12] md:aspect-[16/10] transform transition-all duration-700 hover:shadow-[0_30px_60px_-12px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_30px_60px_-12px_rgba(0,0,0,0.7)] hover:-translate-y-1">
                     
                     <MiniWebsite />
                     
